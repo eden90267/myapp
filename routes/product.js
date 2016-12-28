@@ -9,7 +9,9 @@ router.route('/')
         var array = [];
         db.createReadStream()
             .on('data', function (data) {
-                array.push(JSON.parse(data.value));
+                var value = JSON.parse(data.value);
+                value.id = data.key;
+                array.push(value);
             })
             .on('close', function () {
                 res.set('Content-Type', 'application/json');
