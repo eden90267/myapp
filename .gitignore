@@ -92,3 +92,6 @@ jspm_packages
 .yarn-integrity
 
 /.idea/
+
+# LevelDB
+/db/
